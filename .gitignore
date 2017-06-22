@@ -1,3 +1,7 @@
+# java
+*.jar
+*.war
+
 # eclipse
 .classpath
 .project
