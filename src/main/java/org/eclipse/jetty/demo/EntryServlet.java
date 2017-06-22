@@ -19,7 +19,10 @@ public class EntryServlet extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        LOG.info(String.format("doGet() : dispatcherType=%s : requestURI=%s : response.class=%s", req.getDispatcherType(), req.getRequestURI(), resp.getClass().getName()));
+        LOG.info(String.format("doGet() : dispatcherType=%s : requestURI=%s : request.class=%s : response.class=%s",
+                req.getDispatcherType(), req.getRequestURI(),
+                req.getClass().getName(),
+                resp.getClass().getName()));
         if (req.getDispatcherType() == DispatcherType.REQUEST)
         {
             AsyncContext async = req.startAsync(req,resp);

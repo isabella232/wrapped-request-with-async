@@ -35,6 +35,7 @@ public class AntiPatternFilter implements Filter
 
             LOG.info(String.format("doFilter() : dispatcherType=%s : uri=%s", httpRequest.getDispatcherType(), httpRequest.getRequestURI()));
 
+            httpRequest = new AntiPatternRequestWrapper(httpRequest);
             httpResponse = new AntiPatternResponseWrapper(httpResponse);
             chain.doFilter(httpRequest, httpResponse);
         }
